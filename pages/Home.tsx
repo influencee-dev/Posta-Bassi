@@ -7,46 +7,56 @@ interface HomeProps {
 }
 
 export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
-  const images = [
-    "https://images.unsplash.com/photo-1541167760496-162955ed8a9f?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800&auto=format&fit=crop"
+  // Lista delle immagini caricate dal cliente
+  const galleryImages = [
+    { url: "/DSC02581.jpg", title: "Dettagli Masseria" },
+    { url: "/DSC02611.jpg", title: "Il Giardino" },
+    { url: "/DSC02614.jpg", title: "L'Ingresso" },
+    { url: "/DSC02621.jpg", title: "Atmosfere all'Aperto" },
+    { url: "/DSC02641.jpg", title: "Area Giochi" },
+    { url: "/DSC02643.jpg", title: "Natura e Relax" },
+    { url: "/DSC02646.jpg", title: "Ristorazione" },
+    { url: "/DSC02652.jpg", title: "Architettura Storica" },
+    { url: "/DSC02655.jpg", title: "Le Nostre Camere" },
+    { url: "/DSC02672.jpg", title: "Cene al Tramonto" },
+    { url: "/DSC02761.jpg", title: "Divertimento" },
+    { url: "/DSC02766.jpg", title: "Posta Bassi di Sera" }
   ];
 
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1920&auto=format&fit=crop" 
-            alt="Agriturismo Posta Bassi" 
-            className="w-full h-full object-cover animate-slow-zoom brightness-[0.7]"
+            src="/DSC02766.jpg" 
+            alt="Agriturismo Posta Bassi al Tramonto" 
+            className="w-full h-full object-cover animate-slow-zoom brightness-[0.6]"
           />
           <div className="absolute inset-0 hero-gradient" />
         </div>
         
-        <div className="relative z-10 text-center text-white px-4 max-w-4xl">
-          <span className="text-brand uppercase tracking-[0.4em] font-bold text-sm mb-6 block brightness-[1.8] drop-shadow-sm">Dal 1948 ad Arpinova</span>
-          <h1 className="text-6xl md:text-9xl font-serif font-bold mb-8 drop-shadow-2xl leading-[1.1]">
+        <div className="relative z-10 text-center text-white px-4 max-w-5xl">
+          <div className="mb-8 flex justify-center">
+             <img src="/logo.jpg" alt="Logo" className="w-24 h-24 rounded-full border-2 border-brand shadow-2xl animate-in fade-in zoom-in duration-700" />
+          </div>
+          <span className="text-brand uppercase tracking-[0.5em] font-black text-xs md:text-sm mb-6 block brightness-[2] drop-shadow-sm">Dal 1948 nel cuore della Daunia</span>
+          <h1 className="text-6xl md:text-9xl font-serif font-bold mb-8 drop-shadow-2xl leading-[1] transition-all">
             Posta <span className="text-brand brightness-150">Bassi</span>
           </h1>
-          <p className="text-xl md:text-2xl font-light mb-12 max-w-2xl mx-auto opacity-95 leading-relaxed drop-shadow-md">
-            L'autentico agriturismo foggiano, dove la tradizione del Tavoliere incontra la freschezza dei nostri campi.
+          <p className="text-xl md:text-2xl font-light mb-12 max-w-3xl mx-auto opacity-95 leading-relaxed drop-shadow-lg italic">
+            "Saperi e sapori della nostra terra, portati in tavola con amore."
           </p>
-          <div className="flex flex-col sm:flex-row gap-5 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <button 
               onClick={onOpenBooking}
-              className="px-12 py-5 bg-brand hover:bg-brand-hover text-white font-bold rounded-full transition-all transform hover:scale-105 shadow-2xl"
+              className="px-14 py-5 bg-brand hover:bg-brand-hover text-white font-black uppercase tracking-widest text-sm rounded-full transition-all transform hover:scale-105 shadow-[0_20px_50px_rgba(77,11,43,0.3)]"
             >
-              Prenota un Tavolo
+              Prenota ora
             </button>
             <Link 
               to="/menu"
-              className="px-12 py-5 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 font-bold rounded-full transition-all"
+              className="px-14 py-5 bg-white/10 hover:bg-white/20 backdrop-blur-xl text-white border border-white/40 font-black uppercase tracking-widest text-sm rounded-full transition-all"
             >
               Scopri il Menu
             </Link>
@@ -54,42 +64,43 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
         </div>
       </section>
 
-      {/* History Section */}
-      <section className="py-24 bg-stone-50 dark:bg-stone-900 overflow-hidden transition-colors">
+      {/* Storia & Masseria Section */}
+      <section className="py-32 bg-stone-50 dark:bg-stone-900 transition-colors">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-             <div className="relative">
-              <div className="absolute -top-10 -left-10 w-40 h-40 bg-brand/10 rounded-full blur-3xl" />
-              <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=800&auto=format&fit=crop" alt="Campagna Foggiana" className="rounded-3xl shadow-2xl relative z-10" />
-              <div className="absolute -bottom-6 -right-6 bg-brand p-8 rounded-2xl text-white shadow-xl z-20 hidden md:block">
-                <p className="text-4xl font-serif font-bold italic">1948</p>
-                <p className="text-xs uppercase tracking-widest opacity-80">Fondazione</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+             <div className="relative group">
+              <div className="absolute -top-12 -left-12 w-48 h-48 bg-brand/5 rounded-full blur-[100px]" />
+              <img 
+                src="/DSC02652.jpg" 
+                alt="Ingresso Masseria" 
+                className="rounded-[2.5rem] shadow-2xl relative z-10 transition-transform duration-700 group-hover:scale-[1.02]" 
+              />
+              <div className="absolute -bottom-8 -right-8 bg-brand p-10 rounded-3xl text-white shadow-2xl z-20 hidden lg:block">
+                <p className="text-5xl font-serif font-bold italic mb-1">75+</p>
+                <p className="text-[10px] uppercase tracking-[0.3em] font-black opacity-80">Anni di Tradizione</p>
               </div>
             </div>
-            <div className="space-y-8">
-              <div className="space-y-2">
-                <span className="text-brand font-bold uppercase tracking-widest text-sm brightness-125">La Nostra Storia</span>
-                <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 dark:text-white transition-colors">Dalla Masseria all'Agriturismo</h2>
+            <div className="space-y-10">
+              <div className="space-y-4">
+                <span className="text-brand font-black uppercase tracking-[0.3em] text-xs brightness-125">L'Eredità della Daunia</span>
+                <h2 className="text-4xl md:text-6xl font-serif font-bold text-stone-900 dark:text-white leading-tight">Un viaggio nel tempo dal 1948</h2>
               </div>
-              <div className="space-y-4 text-stone-600 dark:text-stone-400 text-lg leading-relaxed transition-colors">
+              <div className="space-y-6 text-stone-600 dark:text-stone-400 text-lg md:text-xl leading-relaxed font-light">
                 <p>
-                  L'Agriturismo Posta Bassi nasce dalla ristrutturazione di una masseria del 1948. Posto alla periferia di Arpinova, nei pressi di Foggia, è situato nella contrada da cui prende il nome.
+                  L'Agriturismo **Posta Bassi** non è solo un ristorante, è un pezzo di storia foggiana. Nata come masseria nel 1948, la nostra struttura conserva il fascino dell'architettura rurale in mattoni rossi.
                 </p>
                 <p>
-                  Sorgiamo su un'area di 4 ettari, nella quale coltiviamo prodotti orticoli utilizzati all'interno dell'agriturismo stesso. 
-                </p>
-                <p>
-                  La struttura dispone di 6 camere climatizzate con WI-FI gratuito e una palazzina ristorazione ricavata da una vecchia stalla, con un'ampia veranda affacciata su un parco giochi e un giardino attrezzato.
+                  Dal 2004, abbiamo aperto le porte all'ospitalità, offrendo **6 camere climatizzate** immerse nella quiete di 4 ettari di terreno, dove coltiviamo con orgoglio ciò che troverete nel vostro piatto.
                 </p>
               </div>
-              <div className="grid grid-cols-2 gap-6 pt-4 border-t border-stone-200 dark:border-stone-800 transition-colors">
-                <div>
-                  <h4 className="font-bold text-stone-900 dark:text-white transition-colors">Cucina KM 0</h4>
-                  <p className="text-sm text-stone-500">Dall'orto alla tavola</p>
+              <div className="grid grid-cols-2 gap-8 pt-8 border-t border-stone-200 dark:border-stone-800">
+                <div className="flex flex-col">
+                  <span className="text-3xl font-serif font-bold text-brand italic">4 Ettari</span>
+                  <span className="text-xs uppercase tracking-widest text-stone-500 font-bold">Coltivazioni Proprie</span>
                 </div>
-                <div>
-                  <h4 className="font-bold text-stone-900 dark:text-white transition-colors">Ospitalità</h4>
-                  <p className="text-sm text-stone-500">6 Camere climatizzate</p>
+                <div className="flex flex-col">
+                  <span className="text-3xl font-serif font-bold text-brand italic">6 Camere</span>
+                  <span className="text-xs uppercase tracking-widest text-stone-500 font-bold">Ospitalità Rurale</span>
                 </div>
               </div>
             </div>
@@ -97,60 +108,88 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
         </div>
       </section>
 
-      {/* Row Menu Teaser */}
-      <section className="py-24 bg-white dark:bg-stone-950 transition-colors">
+      {/* Row Menu Teaser - Usando foto reale */}
+      <section className="py-32 bg-white dark:bg-stone-950 transition-colors">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <div className="order-2 md:order-1">
-              <img src="https://images.unsplash.com/photo-1473093226795-af9932fe5856?q=80&w=800&auto=format&fit=crop" alt="Piatti tipici" className="rounded-3xl shadow-2xl transition-transform duration-500 hover:scale-[1.02]" />
+              <img 
+                src="/DSC02646.jpg" 
+                alt="I nostri sapori" 
+                className="rounded-[2.5rem] shadow-2xl transition-transform duration-500 hover:scale-[1.02]" 
+              />
             </div>
-            <div className="order-1 md:order-2 space-y-8">
-              <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 dark:text-white transition-colors">
-                Sapori Autentici della <br/> <span className="text-brand brightness-125">Daunia</span>
+            <div className="order-1 md:order-2 space-y-10">
+              <h2 className="text-4xl md:text-6xl font-serif font-bold text-stone-900 dark:text-white leading-tight">
+                Cucina della <br/> <span className="text-brand brightness-125 font-black italic">Tradizione</span>
               </h2>
-              <p className="text-stone-600 dark:text-stone-400 text-lg leading-relaxed transition-colors">
-                Utilizziamo prodotti orticoli coltivati nei nostri 4 ettari di terreno per garantirti freschezza e genuinità in ogni portata.
+              <p className="text-stone-600 dark:text-stone-400 text-xl font-light leading-relaxed">
+                Ogni ingrediente parla della nostra terra. Dalle verdure fresche del nostro orto ai piatti di mare e terra tipici della cultura pugliese.
               </p>
-              <ul className="space-y-4">
-                {['Ampio parcheggio a vista', 'Parco giochi per bambini', 'Veranda per eventi', 'Specialità mare e terra'].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-stone-700 dark:text-stone-300 transition-colors">
-                    <svg className="w-5 h-5 text-brand brightness-125" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
+              <ul className="space-y-6">
+                {[
+                  'Ampio parcheggio privato e sicuro', 
+                  'Parco giochi per il divertimento dei più piccoli', 
+                  'Veranda panoramica per eventi speciali', 
+                  'Specialità tradizionali di terra e mare'
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-4 text-stone-700 dark:text-stone-300 text-lg transition-colors font-medium">
+                    <div className="w-6 h-6 rounded-full bg-brand/10 flex items-center justify-center text-brand">
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/></svg>
+                    </div>
                     {item}
                   </li>
                 ))}
               </ul>
-              <Link to="/menu" className="inline-block px-10 py-4 border-2 border-brand text-brand font-bold rounded-xl hover:bg-brand hover:text-white transition-all">
-                Esplora il Menu
-              </Link>
+              <div className="pt-4">
+                <Link to="/menu" className="inline-block px-12 py-5 bg-brand text-white font-black uppercase tracking-widest rounded-2xl hover:bg-brand-hover transition-all shadow-xl">
+                  Esplora il Menu
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Row Photo Gallery */}
-      <section className="py-24 bg-stone-50 dark:bg-stone-900 transition-colors">
+      {/* Row Photo Gallery Reale */}
+      <section className="py-32 bg-stone-50 dark:bg-stone-900 transition-colors overflow-hidden">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-4xl font-serif font-bold transition-colors">L'Agriturismo in Foto</h2>
-            <div className="w-20 h-1 bg-brand mx-auto" />
-            <p className="text-stone-500 dark:text-stone-400 transition-colors">Posta Bassi: tra natura e buona tavola.</p>
+          <div className="text-center mb-20 space-y-6">
+            <h2 className="text-4xl md:text-6xl font-serif font-bold transition-colors">Uno Sguardo sul Locale</h2>
+            <div className="w-32 h-1.5 bg-brand mx-auto rounded-full" />
+            <p className="text-stone-500 dark:text-stone-400 max-w-2xl mx-auto text-lg">Dagli ampi giardini attrezzati alle sale ricavate dalle antiche stalle, ogni angolo di Posta Bassi racconta una storia di passione.</p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
-            {images.map((url, i) => (
-              <div key={i} className="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer shadow-lg">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            {galleryImages.map((img, i) => (
+              <div key={i} className="group relative overflow-hidden rounded-[2rem] aspect-square cursor-pointer shadow-xl transition-all hover:shadow-2xl">
                 <img 
-                  src={url} 
-                  alt={`Gallery ${i}`} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  src={img.url} 
+                  alt={img.title} 
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-brand/20 transition-all duration-300 flex items-center justify-center">
-                   <svg className="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                   </svg>
-                </div>
+                {/* Rimosso overlay testuale su richiesta utente */}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action Final Section */}
+      <section className="relative py-32 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src="/DSC02672.jpg" alt="Outdoor area" className="w-full h-full object-cover brightness-[0.4]" />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center text-white space-y-8">
+          <h2 className="text-5xl md:text-7xl font-serif font-bold leading-tight">Pronti a vivere un'esperienza autentica?</h2>
+          <p className="text-xl opacity-90 font-light max-w-2xl mx-auto leading-relaxed">Ti aspettiamo per cena o per un weekend indimenticabile nella nostra masseria. Parcheggio privato e parco giochi sempre disponibili.</p>
+          <div className="pt-6">
+            <button 
+              onClick={onOpenBooking}
+              className="px-16 py-6 bg-white text-brand font-black uppercase tracking-[0.2em] text-sm rounded-full hover:scale-105 transition-transform shadow-2xl"
+            >
+              Prenota il tuo tavolo
+            </button>
           </div>
         </div>
       </section>

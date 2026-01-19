@@ -45,9 +45,13 @@
       .dark .dark\:text-white { color: #fff; }
       .dark .dark\:bg-stone-950 { background-color: #0c0a09; }
       
-      /* Overlay per leggibilità Hero */
       .hero-gradient {
-        background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.8) 100%);
+        background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.8) 100%);
+      }
+      
+      ::selection {
+        background-color: #4d0b2b;
+        color: white;
       }
     </style>
   <script type="importmap">
@@ -63,7 +67,7 @@
 }
 </script>
 </head>
-  <body class="bg-stone-50 text-stone-900 transition-colors duration-300 dark:bg-stone-950 dark:text-stone-100">
+  <body class="bg-stone-50 text-stone-900 transition-colors duration-300 dark:bg-stone-950 dark:text-stone-100 selection:bg-brand selection:text-white">
     <div id="root"></div>
   </body>
 </html>
