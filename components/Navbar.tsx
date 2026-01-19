@@ -24,7 +24,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
         <div className="flex justify-between items-center h-24">
           <Link to="/" className="flex items-center gap-3 group">
             <img 
-              src="public/logo.jpg" 
+              src="/logo.jpeg" 
               alt="Posta Bassi Logo" 
               className="h-16 w-16 rounded-full object-cover border-2 border-brand transition-transform group-hover:scale-105"
             />
