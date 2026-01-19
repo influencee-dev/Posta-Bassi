@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
         {/* Branding & Info */}
         <div className="space-y-6 flex flex-col items-center md:items-start">
           <div className="flex items-center gap-4">
-            <img src="/logo.jpg" alt="Logo" className="h-16 w-16 rounded-full border-2 border-brand shadow-lg" />
+            <img src="/logo.jpeg" alt="Logo" className="h-16 w-16 rounded-full border-2 border-brand shadow-lg" />
             <h3 className="text-3xl font-serif font-black uppercase tracking-tighter text-stone-900 dark:text-white">
               Posta <span className="text-brand">Bassi</span>
             </h3>

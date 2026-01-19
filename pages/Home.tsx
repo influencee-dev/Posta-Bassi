@@ -7,20 +7,18 @@ interface HomeProps {
 }
 
 export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
-  // Lista delle immagini aggiornata con la nuova nomenclatura
+  // Lista delle immagini fornita dall'utente
   const galleryImages = [
-    { url: "/IMG_1622.jpg", title: "Scorci della Masseria" },
-    { url: "/IMG_1625.jpg", title: "Il nostro Giardino" },
-    { url: "/IMG_1627.jpg", title: "Ingresso Fiorito" },
-    { url: "/IMG_1628.jpg", title: "Area Relax" },
-    { url: "/IMG_1631.jpg", title: "Parco Giochi" },
-    { url: "/IMG_1632.jpg", title: "Angoli di Natura" },
-    { url: "/IMG_1635.jpg", title: "Le nostre Camere" },
-    { url: "/IMG_1636.jpg", title: "Cena all'Aperto" },
-    { url: "/IMG_1639.jpg", title: "Verde e Architettura" },
-    { url: "/IMG_1640.jpg", title: "Dettagli Divertimento" },
-    { url: "/IMG_1641.jpg", title: "Atmosfere Serali" },
-    { url: "/IMG_1642.jpg", title: "Vista Panoramica" }
+    { url: "/IMG_0054.jpg", title: "Dettagli Masseria" },
+    { url: "/IMG_0067.jpg", title: "Il Giardino" },
+    { url: "/IMG_0258.jpg", title: "Atmosfera" },
+    { url: "/IMG_1627.jpg", title: "Ingresso" },
+    { url: "/IMG_1757.jpg", title: "Area Giochi" },
+    { url: "/IMG_1809.jpg", title: "Natura" },
+    { url: "/IMG_1814.jpg", title: "Esterni" },
+    { url: "/IMG_1851.jpg", title: "Passeggiata" },
+    { url: "/IMG_1927.jpg", title: "Dettaglio" },
+    { url: "/IMG_1939.jpg", title: "Tramonto" }
   ];
 
   return (
@@ -29,7 +27,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
       <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="/IMG_1638.jpg" 
+            src="/IMG_2030.jpg" 
             alt="Agriturismo Posta Bassi al Tramonto" 
             className="w-full h-full object-cover animate-slow-zoom brightness-[0.6]"
           />
@@ -38,7 +36,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
         
         <div className="relative z-10 text-center text-white px-4 max-w-5xl">
           <div className="mb-8 flex justify-center">
-             <img src="/logo.jpg" alt="Logo Posta Bassi" className="w-24 h-24 rounded-full border-2 border-brand shadow-2xl animate-in fade-in zoom-in duration-700" />
+             <img src="/logo.jpeg" alt="Logo Posta Bassi" className="w-24 h-24 rounded-full border-2 border-brand shadow-2xl animate-in fade-in zoom-in duration-700" />
           </div>
           <span className="text-brand uppercase tracking-[0.5em] font-black text-xs md:text-sm mb-6 block brightness-[2] drop-shadow-sm">Dal 1948 nel cuore della Daunia</span>
           <h1 className="text-6xl md:text-9xl font-serif font-bold mb-8 drop-shadow-2xl leading-[1] transition-all">
@@ -71,7 +69,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
              <div className="relative group">
               <div className="absolute -top-12 -left-12 w-48 h-48 bg-brand/5 rounded-full blur-[100px]" />
               <img 
-                src="/IMG_1634.jpg" 
+                src="/IMG_1622.jpg" 
                 alt="Ingresso Masseria Storica" 
                 className="rounded-[2.5rem] shadow-2xl relative z-10 transition-transform duration-700 group-hover:scale-[1.02]" 
               />
@@ -114,7 +112,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <div className="order-2 md:order-1">
               <img 
-                src="/IMG_1633.jpg" 
+                src="/IMG_1613.jpg" 
                 alt="Tavola Imbandita Posta Bassi" 
                 className="rounded-[2.5rem] shadow-2xl transition-transform duration-500 hover:scale-[1.02]" 
               />
@@ -177,7 +175,7 @@ export const Home: React.FC<HomeProps> = ({ onOpenBooking }) => {
       {/* Call to Action Final Section */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/IMG_1644.jpg" alt="Atmosfera Notturna Posta Bassi" className="w-full h-full object-cover brightness-[0.4]" />
+          <img src="/IMG_1979.jpg" alt="Atmosfera Notturna Posta Bassi" className="w-full h-full object-cover brightness-[0.4]" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center text-white space-y-8">
           <h2 className="text-5xl md:text-7xl font-serif font-bold leading-tight">Vivi l'autenticità di Posta Bassi</h2>
