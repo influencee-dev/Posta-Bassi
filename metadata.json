@@ -1,0 +1,7 @@
+{
+  "name": "Posta Bassi - Ristorante & Pizzeria",
+  "description": "Sito web ufficiale di Posta Bassi, cucina tradizionale italiana, pizzeria e specialità senza glutine.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
