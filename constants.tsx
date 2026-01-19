@@ -5,9 +5,8 @@ export const RESTAURANT_CONFIG = {
   whatsapp: "390881700155",
   email: "info@postabassi.it",
   address: "Via Manfredonia Km.196+200, 71121 Foggia (FG), Italia",
-  // Utilizziamo le variabili d'ambiente di Vite per la produzione
-  // Fix: Cast import.meta to any to bypass TypeScript error regarding the 'env' property on ImportMeta
-  brevoApiKey: (import.meta as any).env?.VITE_BREVO_API_KEY || "fallback_key_if_needed",
+  // Vite utilizza import.meta.env per le variabili d'ambiente
+  brevoApiKey: (import.meta as any).env?.VITE_BREVO_API_KEY || "",
   brevoListId: 26,
   hours: [
     { day: "Lunedì", hours: "Chiuso" },

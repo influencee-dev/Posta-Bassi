@@ -53,13 +53,19 @@
         background-color: #4d0b2b;
         color: white;
       }
+
+      /* Fix per immagini caricate localmente */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
     </style>
   <script type="importmap">
 {
   "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/",
     "react": "https://esm.sh/react@^19.2.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
     "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
     "vite": "https://esm.sh/vite@^7.3.1",
     "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
@@ -69,5 +75,7 @@
 </head>
   <body class="bg-stone-50 text-stone-900 transition-colors duration-300 dark:bg-stone-950 dark:text-stone-100 selection:bg-brand selection:text-white">
     <div id="root"></div>
+    <!-- Entry point fondamentale per far partire React -->
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
